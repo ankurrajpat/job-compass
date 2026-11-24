@@ -1,0 +1,214 @@
+{
+  "mode": "tfidf",
+  "queries": 12,
+  "catalog_size": 24,
+  "recall_at_5": 0.9583,
+  "mrr_at_5": 1.0,
+  "p50_query_ms": 0.47,
+  "max_query_ms": 0.72,
+  "caveat": "Hand-authored synthetic catalog and relevance labels, not a production retrieval benchmark. Dense model loading and index construction excluded from query timing. Tiny sample: report max, not p95.",
+  "rows": [
+    {
+      "query": "LLM agents tool calling structured outputs",
+      "relevant": [
+        "j01",
+        "j09",
+        "j14"
+      ],
+      "top5": [
+        "j09",
+        "j14",
+        "j01",
+        "j02",
+        "j03"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "milliseconds": 0.72
+    },
+    {
+      "query": "semantic search embeddings retrieval ranking",
+      "relevant": [
+        "j02",
+        "j15"
+      ],
+      "top5": [
+        "j02",
+        "j15",
+        "j12",
+        "j03",
+        "j05"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "milliseconds": 0.54
+    },
+    {
+      "query": "recommendation two tower cold start",
+      "relevant": [
+        "j03",
+        "j20"
+      ],
+      "top5": [
+        "j03",
+        "j20",
+        "j01",
+        "j02",
+        "j04"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "milliseconds": 0.48
+    },
+    {
+      "query": "SQL database schemas transactions indexing",
+      "relevant": [
+        "j10",
+        "j04"
+      ],
+      "top5": [
+        "j10",
+        "j13",
+        "j18",
+        "j05",
+        "j07"
+      ],
+      "recall_at_5": 0.5,
+      "reciprocal_rank": 1.0,
+      "milliseconds": 0.47
+    },
+    {
+      "query": "Docker container deployment cloud reliability",
+      "relevant": [
+        "j08",
+        "j22"
+      ],
+      "top5": [
+        "j08",
+        "j22",
+        "j14",
+        "j19",
+        "j04"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "milliseconds": 0.47
+    },
+    {
+      "query": "RAG question answering citation evaluation",
+      "relevant": [
+        "j05",
+        "j21"
+      ],
+      "top5": [
+        "j05",
+        "j21",
+        "j24",
+        "j09",
+        "j14"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "milliseconds": 0.48
+    },
+    {
+      "query": "React TypeScript accessible frontend",
+      "relevant": [
+        "j06",
+        "j13"
+      ],
+      "top5": [
+        "j06",
+        "j13",
+        "j01",
+        "j02",
+        "j03"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "milliseconds": 0.46
+    },
+    {
+      "query": "Python API endpoints FastAPI SQL",
+      "relevant": [
+        "j19",
+        "j04"
+      ],
+      "top5": [
+        "j19",
+        "j04",
+        "j21",
+        "j02",
+        "j16"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "milliseconds": 0.46
+    },
+    {
+      "query": "data ETL ingestion changing feeds",
+      "relevant": [
+        "j18"
+      ],
+      "top5": [
+        "j18",
+        "j07",
+        "j02",
+        "j01",
+        "j03"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "milliseconds": 0.51
+    },
+    {
+      "query": "computer vision image object detection",
+      "relevant": [
+        "j11"
+      ],
+      "top5": [
+        "j11",
+        "j01",
+        "j02",
+        "j03",
+        "j04"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "milliseconds": 0.45
+    },
+    {
+      "query": "Android Kotlin mobile screens",
+      "relevant": [
+        "j17"
+      ],
+      "top5": [
+        "j17",
+        "j01",
+        "j02",
+        "j03",
+        "j04"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "milliseconds": 0.45
+    },
+    {
+      "query": "LLM quality evaluation labeled test sets",
+      "relevant": [
+        "j24",
+        "j05"
+      ],
+      "top5": [
+        "j24",
+        "j05",
+        "j14",
+        "j01",
+        "j15"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "milliseconds": 0.45
+    }
+  ]
+}

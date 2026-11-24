@@ -1,0 +1,417 @@
+[
+  {
+    "id": "j01",
+    "title": "LLM Agent Engineer Intern",
+    "company": "Lumen Labs",
+    "location": "India",
+    "work_mode": "remote",
+    "skills": [
+      "Python",
+      "LLMs",
+      "Tool Calling",
+      "Pydantic",
+      "FastAPI"
+    ],
+    "description": "Build conversational agents that call typed tools and return validated JSON. Maintain context across turns and evaluate grounded answers.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j02",
+    "title": "Search & Relevance Intern",
+    "company": "Orbit Careers",
+    "location": "Bengaluru, India",
+    "work_mode": "hybrid",
+    "skills": [
+      "Python",
+      "Embeddings",
+      "SQL",
+      "Ranking",
+      "FastAPI"
+    ],
+    "description": "Build semantic search across a changing jobs index. Combine dense retrieval with ranking and personalization. Measure recall and ranking quality.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j03",
+    "title": "Recommendation Systems Intern",
+    "company": "Tidal Media",
+    "location": "India",
+    "work_mode": "remote",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "Ranking",
+      "SQL",
+      "FAISS"
+    ],
+    "description": "Train recommendation models with user and item embeddings. Compare popularity baselines and two-tower retrieval. Analyze cold start and long-tail recommendations.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j04",
+    "title": "Backend Engineering Intern",
+    "company": "Kite Systems",
+    "location": "Pune, India",
+    "work_mode": "onsite",
+    "skills": [
+      "Python",
+      "SQL",
+      "PostgreSQL",
+      "REST APIs",
+      "Docker"
+    ],
+    "description": "Design normalized tables and transactional queries. Ship backend API endpoints and containerized services. Write tests and monitor errors.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j05",
+    "title": "RAG Evaluation Intern",
+    "company": "Cedar AI",
+    "location": "Worldwide",
+    "work_mode": "remote",
+    "skills": [
+      "Python",
+      "RAG",
+      "LLMs",
+      "Embeddings",
+      "Evaluation"
+    ],
+    "description": "Evaluate retrieval-augmented question answering with citation accuracy, retrieval recall and output schemas. Build reproducible evaluation datasets.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j06",
+    "title": "Frontend Engineering Intern",
+    "company": "Canvas Studio",
+    "location": "Delhi, India",
+    "work_mode": "onsite",
+    "skills": [
+      "TypeScript",
+      "React",
+      "CSS",
+      "Accessibility"
+    ],
+    "description": "Build accessible frontend dashboards with responsive interfaces and component tests.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j07",
+    "title": "Data Analytics Intern",
+    "company": "Aster Finance",
+    "location": "Mumbai, India",
+    "work_mode": "hybrid",
+    "skills": [
+      "SQL",
+      "Python",
+      "Pandas",
+      "Statistics"
+    ],
+    "description": "Analyze business metrics with SQL joins, dashboard reporting and experiment analysis.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j08",
+    "title": "ML Infrastructure Intern",
+    "company": "Nimbus Compute",
+    "location": "Hyderabad, India",
+    "work_mode": "onsite",
+    "skills": [
+      "Python",
+      "Docker",
+      "Kubernetes",
+      "Cloud",
+      "CI/CD"
+    ],
+    "description": "Containerize machine learning services. Build cloud deployment pipelines and improve service reliability.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j09",
+    "title": "Conversational AI Intern",
+    "company": "Echo Tools",
+    "location": "Worldwide",
+    "work_mode": "remote",
+    "skills": [
+      "Python",
+      "LLMs",
+      "Tool Calling",
+      "JSON Schema",
+      "Evaluation"
+    ],
+    "description": "Develop multi-turn assistants with function calling, structured outputs, bounded retries and adversarial evaluations.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j10",
+    "title": "Database Engineering Intern",
+    "company": "Ledger Works",
+    "location": "Chennai, India",
+    "work_mode": "hybrid",
+    "skills": [
+      "SQL",
+      "PostgreSQL",
+      "Indexing",
+      "Transactions"
+    ],
+    "description": "Optimize database schemas, write query plans and test transactional consistency with SQL.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j11",
+    "title": "Computer Vision Intern",
+    "company": "Vista Robotics",
+    "location": "Bengaluru, India",
+    "work_mode": "onsite",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "OpenCV",
+      "Computer Vision"
+    ],
+    "description": "Train image classification and object detection models for factory inspection.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j12",
+    "title": "NLP Research Intern",
+    "company": "Lexicon Labs",
+    "location": "India",
+    "work_mode": "remote",
+    "skills": [
+      "Python",
+      "Embeddings",
+      "Transformers",
+      "NLP"
+    ],
+    "description": "Evaluate language embeddings for document retrieval and multilingual semantic similarity.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j13",
+    "title": "Full Stack Intern",
+    "company": "Forma Apps",
+    "location": "Kolkata, India",
+    "work_mode": "hybrid",
+    "skills": [
+      "TypeScript",
+      "React",
+      "Node.js",
+      "SQL"
+    ],
+    "description": "Build user-facing web features across frontend and backend. Implement database-backed APIs.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j14",
+    "title": "Agent Reliability Intern",
+    "company": "Pilot AI",
+    "location": "Bengaluru, India",
+    "work_mode": "hybrid",
+    "skills": [
+      "Python",
+      "LLMs",
+      "Tool Calling",
+      "Evaluation",
+      "Docker"
+    ],
+    "description": "Test agent tool-use accuracy and structured outputs. Track failure categories, latency and graceful fallbacks in containerized services.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j15",
+    "title": "Information Retrieval Intern",
+    "company": "Atlas Search",
+    "location": "Worldwide",
+    "work_mode": "remote",
+    "skills": [
+      "Python",
+      "BM25",
+      "Embeddings",
+      "Ranking"
+    ],
+    "description": "Compare sparse and dense retrieval with labeled queries. Measure recall at k and reciprocal rank for a search engine.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j16",
+    "title": "Security Engineering Intern",
+    "company": "Shield Labs",
+    "location": "India",
+    "work_mode": "remote",
+    "skills": [
+      "Python",
+      "Security",
+      "APIs",
+      "Testing"
+    ],
+    "description": "Test API access controls, rate limits and untrusted input handling. Write security regression tests.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j17",
+    "title": "Mobile Developer Intern",
+    "company": "Pocket Studio",
+    "location": "Jaipur, India",
+    "work_mode": "onsite",
+    "skills": [
+      "Kotlin",
+      "Android",
+      "REST APIs"
+    ],
+    "description": "Build Android app screens and integrate backend APIs.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j18",
+    "title": "Data Pipeline Intern",
+    "company": "River Data",
+    "location": "India",
+    "work_mode": "remote",
+    "skills": [
+      "Python",
+      "SQL",
+      "ETL",
+      "Airflow"
+    ],
+    "description": "Ingest changing data feeds, deduplicate records, validate schemas and schedule incremental updates.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j19",
+    "title": "Python API Intern",
+    "company": "Northstar Tech",
+    "location": "Delhi, India",
+    "work_mode": "hybrid",
+    "skills": [
+      "Python",
+      "FastAPI",
+      "SQL",
+      "Docker"
+    ],
+    "description": "Build typed Python backend APIs with validation, pagination and tests. Deploy Docker services.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j20",
+    "title": "Personalization Intern",
+    "company": "Mosaic Commerce",
+    "location": "Bengaluru, India",
+    "work_mode": "onsite",
+    "skills": [
+      "Python",
+      "Ranking",
+      "Embeddings",
+      "Experimentation"
+    ],
+    "description": "Rank products using user preferences and embedding similarity. Evaluate relevance and recommendation coverage.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j21",
+    "title": "AI Product Intern",
+    "company": "Sage Assist",
+    "location": "Worldwide",
+    "work_mode": "remote",
+    "skills": [
+      "Python",
+      "LLMs",
+      "RAG",
+      "FastAPI",
+      "SQL"
+    ],
+    "description": "Build a retrieval-powered assistant with persisted conversation memory, Python APIs and evaluation tooling.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j22",
+    "title": "DevOps Intern",
+    "company": "Beacon Cloud",
+    "location": "Pune, India",
+    "work_mode": "hybrid",
+    "skills": [
+      "Docker",
+      "Linux",
+      "CI/CD",
+      "Cloud"
+    ],
+    "description": "Create repeatable container builds and health checks for cloud-hosted web applications.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j23",
+    "title": "Systems Intern",
+    "company": "Copper Systems",
+    "location": "Bengaluru, India",
+    "work_mode": "onsite",
+    "skills": [
+      "C++",
+      "Linux",
+      "Networking"
+    ],
+    "description": "Implement low-level networking and concurrent systems in C++.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  },
+  {
+    "id": "j24",
+    "title": "ML Evaluation Intern",
+    "company": "Metric AI",
+    "location": "India",
+    "work_mode": "remote",
+    "skills": [
+      "Python",
+      "Evaluation",
+      "Statistics",
+      "LLMs"
+    ],
+    "description": "Create labeled test sets for language model output quality. Report schema validity, groundedness and failure cases.",
+    "source": "fictional fixture",
+    "updated_at": "2026-11-21",
+    "url": null
+  }
+]

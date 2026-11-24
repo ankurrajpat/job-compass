@@ -1,0 +1,60 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "caveat": "Small live smoke suite, not a general agent accuracy estimate. Rate limits count as failures.",
+  "rows": [
+    {
+      "case": "remember-and-search",
+      "ok": true,
+      "milliseconds": 2135,
+      "tools": [
+        "remember_preferences",
+        "search_jobs",
+        "get_job_details"
+      ],
+      "schema_valid": true,
+      "ids_grounded": true,
+      "recommendation_ids": [
+        "j01"
+      ],
+      "preferences": {
+        "skills": [
+          "Python",
+          "SQL",
+          "FastAPI"
+        ],
+        "target_role": "LLM agent internship",
+        "location": "India",
+        "remote_only": true
+      },
+      "expectation_passed": true
+    },
+    {
+      "case": "follow-up",
+      "ok": true,
+      "milliseconds": 1562,
+      "tools": [
+        "search_jobs"
+      ],
+      "schema_valid": true,
+      "ids_grounded": true,
+      "recommendation_ids": [
+        "j15",
+        "j21",
+        "j03",
+        "j12",
+        "j05"
+      ],
+      "preferences": {
+        "skills": [
+          "Python",
+          "SQL",
+          "FastAPI"
+        ],
+        "target_role": "LLM agent internship",
+        "location": "India",
+        "remote_only": true
+      },
+      "expectation_passed": true
+    }
+  ]
+}

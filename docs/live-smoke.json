@@ -1,0 +1,74 @@
+{
+  "summary": "Found 1 remote LLM agent internship in India that aligns with your skills and preferences.",
+  "recommendations": [
+    {
+      "job_id": "j01",
+      "reason": "This role is a remote LLM Agent Engineer Intern based in India, matching your target role and location. It requires Python and FastAPI, which you already know, and focuses on building conversational agents with LLMs and tool calling.",
+      "gaps": [
+        "LLMs",
+        "Tool Calling",
+        "Pydantic"
+      ]
+    }
+  ],
+  "follow_up": "Would you like to explore similar roles that might be outside India or consider adding more skills such as LLMs or tool\u2011calling frameworks?",
+  "jobs": [
+    {
+      "id": "j01",
+      "title": "LLM Agent Engineer Intern",
+      "company": "Lumen Labs",
+      "location": "India",
+      "work_mode": "remote",
+      "skills": [
+        "Python",
+        "LLMs",
+        "Tool Calling",
+        "Pydantic",
+        "FastAPI"
+      ],
+      "description": "Build conversational agents that call typed tools and return validated JSON. Maintain context across turns and evaluate grounded answers.",
+      "source": "fictional fixture",
+      "updated_at": "2026-11-21",
+      "url": null,
+      "score": 0.5281,
+      "matched_skills": [
+        "fastapi",
+        "python"
+      ],
+      "retrieval_mode": "hybrid-bge"
+    }
+  ],
+  "trace": [
+    {
+      "tool": "remember_preferences",
+      "status": "ok",
+      "milliseconds": 1.91,
+      "result_count": null
+    },
+    {
+      "tool": "search_jobs",
+      "status": "ok",
+      "milliseconds": 73.58,
+      "result_count": 5
+    },
+    {
+      "tool": "get_job_details",
+      "status": "ok",
+      "milliseconds": 0.02,
+      "result_count": 5
+    }
+  ],
+  "preferences": {
+    "skills": [
+      "Python",
+      "SQL",
+      "FastAPI"
+    ],
+    "target_role": "LLM agent internship",
+    "location": "India",
+    "remote_only": true
+  },
+  "provider": "groq",
+  "milliseconds": 2316,
+  "retrieval_mode": "hybrid-bge"
+}

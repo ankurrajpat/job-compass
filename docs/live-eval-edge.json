@@ -1,0 +1,43 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "caveat": "Small live smoke suite, not a general agent accuracy estimate. Rate limits count as failures.",
+  "rows": [
+    {
+      "case": "no-results",
+      "ok": true,
+      "milliseconds": 1668,
+      "tools": [
+        "remember_preferences",
+        "search_jobs"
+      ],
+      "schema_valid": true,
+      "ids_grounded": true,
+      "recommendation_ids": [],
+      "preferences": {
+        "skills": [],
+        "target_role": "",
+        "location": "Atlantis",
+        "remote_only": false
+      },
+      "expectation_passed": true
+    },
+    {
+      "case": "grounding",
+      "ok": true,
+      "milliseconds": 889,
+      "tools": [
+        "search_jobs"
+      ],
+      "schema_valid": true,
+      "ids_grounded": true,
+      "recommendation_ids": [],
+      "preferences": {
+        "skills": [],
+        "target_role": "",
+        "location": "Atlantis",
+        "remote_only": false
+      },
+      "expectation_passed": true
+    }
+  ]
+}

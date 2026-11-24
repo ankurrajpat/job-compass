@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="A transparent tool-calling career agent. Search, remember preferences and inspect every tool call."><title>Job Compass | Find your next direction</title><link rel="icon" href="data:,"><link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script></head>
+<body>
+<div class="app-shell">
+<aside class="sidebar">
+ <a class="brand" href="/" aria-label="Job Compass home"><span class="brand-icon">✳</span> job compass<span class="tiny">BETA</span></a>
+ <div class="workspace-label">YOUR WORKSPACE</div>
+ <div class="nav-item selected"><span>⌕</span> Discover roles <span class="nav-dot"></span></div>
+ <div class="sidebar-note"><span class="small-orb"></span> A little context.<br>A better next step.</div>
+ <section class="profile"><div class="eyebrow">SESSION MEMORY <span id="memory-state">EMPTY</span></div><h3>Your direction</h3><p>Tell the agent what you know and where you want to go. It remembers this session.</p><div id="memory-content"><span class="muted">No preferences saved yet.</span></div><button class="text-button" id="clear-memory">Reset session ↗</button></section>
+ <div class="sidebar-bottom"><span class="avatar">JC</span><div>Built to be understood<small>Open tools. Grounded results.</small></div></div>
+</aside>
+<main>
+ <header class="topbar"><span>Discover <span class="slash">/</span> Your next move</span><span class="status" id="status"><i></i> Connecting</span></header>
+ <div class="main-content">
+  <div class="intro-label"><span></span> CAREER DISCOVERY, WITH CONTEXT</div>
+  <h1>Less searching.<br><span>More direction.</span></h1>
+  <p class="intro">An agent that gets to know your skills, finds relevant roles,<br class="desktop"> and shows its work. You stay in control.</p>
+  <div class="catalog-note"><span>DEMO CATALOG</span> 24 fictional roles. Not live vacancies. No applications are sent.</div>
+  <section id="conversation" aria-label="Conversation" aria-live="polite"></section>
+  <section class="composer-panel">
+   <div class="composer-label"><span class="spark">✧</span> Where do you want to go?</div>
+   <form id="chat-form"><label class="sr-only" for="prompt">Your career request</label><textarea id="prompt" maxlength="2000" rows="3" placeholder="I know Python and SQL. Find remote internships in LLM agents..." required></textarea><div class="composer-footer"><span>↵ Enter to send <span class="desktop"> · Shift + Enter for a new line</span></span><button id="send" type="submit">Find my direction <span>↗</span></button></div></form>
+  </section>
+  <div class="suggestions"><span>TRY A DIRECTION</span><button data-prompt="I know Python, SQL and FastAPI. Remember that I want remote LLM agent internships in India, then find my best matches.">✧ LLM & agents</button><button data-prompt="Find remote internships in semantic search, embeddings and ranking.">⌕ Search & retrieval</button><button data-prompt="I know Python and Docker. Find backend API internships in India.">⌘ Python backends</button></div>
+  <section class="insight-strip"><div><span>01</span><h4>Context that stays</h4><p>Preferences saved in SQL,<br>scoped to your session.</p></div><div><span>02</span><h4>Tools, not guesswork</h4><p>Search and evidence lookup.<br>Every call is visible.</p></div><div><span>03</span><h4>Structure you can use</h4><p>Validated recommendations.<br>Export your shortlist as JSON.</p></div></section>
+  <footer><span>JOB COMPASS / AGENT WORKSPACE</span><span>No sign-up. No private CVs. Session expires after 24h.</span></footer>
+ </div>
+</main>
+</div>
+<template id="result-template"><article class="agent-answer"><div class="answer-heading"><span class="answer-icon">✳</span><span>COMPASS</span><span class="response-mode"></span></div><p class="summary"></p><div class="job-grid"></div><p class="follow-up"></p><details class="trace"><summary>Inspect tool activity <span class="trace-count"></span></summary><div class="trace-body"></div></details><button class="text-button export">Download structured JSON ↓</button></article></template>
+</body></html>

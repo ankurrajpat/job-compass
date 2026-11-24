@@ -1,7 +1,7 @@
 FROM python:3.10-slim
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 \
     HOME=/home/app HF_HOME=/home/app/.cache/huggingface \
-    DENSE_SEARCH=1 DATABASE_PATH=/tmp/compass/compass.db PORT=7860
+    DENSE_SEARCH=1 REFRESH_HOURS=24 DATABASE_PATH=/tmp/compass/compass.db PORT=7860
 RUN useradd --create-home --uid 1000 app
 WORKDIR /app
 COPY requirements.txt .

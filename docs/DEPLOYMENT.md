@@ -6,7 +6,8 @@
 - No GitHub repository was pushed. The owner will publish the repository himself.
 - A free Hugging Face hosting account was created, but publication of the source and use of a server-side Groq secret on a public service require the owner's separate approval.
 - No Docker engine was available locally. The Dockerfile and CI build steps are included, but a successful hosted container build must be verified before calling Docker deployment complete.
-- No real users or live vacancy feed are claimed.
+- A live vacancy index exists (public job-board APIs, `ingest.py`). The hosted static demo is still the older replay on fixtures. No real users are claimed.
+- A fresh container has an empty index until `ingest.py` (or REFRESH_HOURS) populates it: about 3 minutes to fetch and 10 to 20 minutes to embed on 1 vCPU.
 
 ## Free Hugging Face Docker Space
 

@@ -14,7 +14,9 @@ A transparent, tool-calling career agent with a custom dark frontend. It remembe
 
 ![Job Compass dark interface, with a real model response and visible tool activity](docs/agent-result.png)
 
-**Portfolio demonstration, not a job board.** The 24 bundled roles and companies are fictional fixtures, not open vacancies. There is no application, email, payment, or arbitrary SQL tool. Do not paste private CVs or secrets into the demo.
+**Job Compass searches real, currently open postings** pulled from public employer job-board APIs (Greenhouse, Lever, Ashby; 58 companies, 12,237 postings at the last measured refresh). It is a portfolio project: no application, email, payment or arbitrary SQL tool. Postings can close between refreshes, so always confirm on the employer's apply link. Do not paste private CVs or secrets.
+
+> The hosted static demo is a recorded real run over this index (captured 2026-11-24; the live agent runs from this repo, see Run locally).
 
 ## What makes this an agent?
 
@@ -39,7 +41,17 @@ No key configured? The app clearly switches to **Preview mode, no LLM**. That pa
 - **Verification:** pytest, Playwright desktop/mobile, retrieval + opt-in live-agent evals
 - **Packaging:** non-root Docker image, health check, GitHub Actions verification workflow
 
-The index refreshes on the next search after a validated catalog import. Dense vectors are rebuilt in memory for this small catalog. This is not an ANN architecture for millions of constantly changing jobs.
+## The jobs index
+
+`python ingest.py` fetches every board in `data/boards.json` (public unauthenticated GET endpoints only, 0.4s between boards, descriptive User-Agent, apply URL kept), then:
+
+- **Sync per board in one transaction:** new roles added, changed roles updated, roles no longer listed marked closed (kept for audit, not searchable). A failed fetch skips that board and never closes its roles.
+- **Incremental re-embedding:** vectors are stored in SQLite keyed by a hash of the embedded text. A refresh embeds only new or text-edited postings.
+- **No rescans:** a version counter tells the running retriever when to rebuild; unchanged refreshes cost nothing.
+- **Daily refresh:** set `REFRESH_HOURS=24` (in-process thread) or run `ingest.py` from cron. `.github/workflows/refresh.yml` runs it daily on GitHub with a cached database (written but not yet run on GitHub).
+- Postings missing a vector fall back to lexical-only scoring until embedded.
+
+Measured (1 vCPU sandbox, 2026-11-24, `docs/ingest-measured.json`): first fetch 12,237 postings from 58 boards in about 3 minutes; embedding all of them about 10 to 20 postings/s. A second full refresh about 20 minutes later: 2 added, 22 updated, 2 closed, 12,213 unchanged, and only 13 postings re-embedded.
 
 ## Run locally
 
@@ -77,20 +89,19 @@ python tests/ui_smoke.py
 python evaluate_agent.py --delay 65
 ```
 
-### Measured results, November 21, 2026
+### Measured results
 
 | Check | Result |
 | --- | --- |
-| Unit, API, validation, isolation, security regression tests | **30 passed** |
-| Browser smoke | Desktop + 390px mobile, form submit, cards, tool trace, JSON download, reset; no browser exceptions |
-| Lexical retrieval, 12 synthetic queries | Recall@5 **0.9583**, MRR@5 **1.00** |
-| Hybrid BGE + lexical retrieval, same queries | Recall@5 **1.00**, MRR@5 **1.00** |
-| Hybrid query timing, local 24-role catalog | Median **44.26 ms**, max **61.50 ms**, excluding model load/index build |
-| Live Groq smoke cases | **4/4** explicit expectations passed; see evaluation caveats below |
+| Tests | **37 passed** (30 original, 7 for parsing, close/reopen, incremental embedding, failed-board safety, scale) |
+| Real index retrieval, 20 queries, 12,237 postings (`evaluate_real.py`) | Lexical (TF-IDF + title match): mean precision@8 **0.8688**, MRR **0.9125**, median **27 ms**. Hybrid BGE+lexical: precision@8 **0.90**, MRR **0.8958**, median **141 ms**, max 203 ms |
+| Per query | Hybrid is better on paraphrased queries ("build LLM agents that use tools" 0.5 to 1.0, "machine learning intern" 0.625 to 1.0) and worse on some keyword ones ("postgres sql database internals" 0.875 to 0.5). Both modes fail "kubernetes docker deployment engineer" (0.0 and 0.125) |
+| Old 24-role fixture (`evaluate.py`) | Recall@5 1.00 hybrid; hand-authored, regression check only |
+| Live Groq agent, real index, 5 scenarios (`docs/live-eval-real.json`) | 5/5 passed on the final run, but one scenario needed a third attempt (one HTTP 429, one fail-closed run) and one was rerun on fresh state. Model: openai/gpt-oss-20b, free tier |
 
-Raw results: [hybrid](docs/retrieval-eval.json), [lexical](docs/lexical-eval.json), [live memory/follow-up](docs/live-eval.json), [live no-results/filter persistence](docs/live-eval-edge.json), [example real response](docs/live-smoke.json).
+**Do not generalize these numbers.** `evaluate_real.py` uses weak labels: a regex on the posting title decides relevance, written before looking at results. It compares modes. It is not human-judged search quality. The hybrid gain is small overall (0.90 vs 0.87). **The title-match weight (0.5) was chosen after seeing a first version of these same 20 queries score 0.83, and I swept a small grid (title weight 0/0.5/0.7, dense weight 0.4/0.6/0.8) on them, so the numbers are optimistic.** A first version of the ranker returned a growth-marketing role for an "applied AI" remote query; that is what the title weight fixed. The live agent suite is five scenarios, a smoke test.
 
-**Do not generalize these numbers.** The catalog and relevance labels were hand-authored together. Twelve queries on 24 fixtures are a regression check, not production search quality. Four live scenarios are a smoke test, not an agent success-rate estimate. The final grounding case retained the previous Atlantis filter and returned no matches; it checks safe persistence/ID handling, not adversarial resistance. An initial immediate model follow-up hit a free-tier HTTP 429. The reported live suite was paced to respect quota; that earlier failure is not hidden by the four passing cases. Model selection was checked against the account's current model list, then `openai/gpt-oss-20b` was used. Free models and limits can change.
+Raw results: [real index](docs/real-eval.json), [refresh stats](docs/ingest-measured.json), [live agent](docs/live-eval-real.json), [fixture hybrid](docs/retrieval-eval.json), [fixture lexical](docs/lexical-eval.json), [live smoke](docs/live-smoke.json).
 
 ## Docker
 
@@ -101,13 +112,15 @@ docker run --rm -p 7860:7860 --env-file .env job-compass
 
 No secrets are baked into the image. Run a single worker: rate limits and in-flight request locks are in process memory. A hosted builder must verify the Dockerfile; Docker was not installed in the local build environment. Do not claim a verified Docker build based on the file alone. See `docs/DEPLOYMENT.md` for the actual deployment state and limits.
 
-## Import a changing catalog
+## Refresh the index
 
 ```bash
-python manage.py data/jobs.json --database /tmp/compass/compass.db
+python ingest.py --database /tmp/compass/compass.db --dense --report docs/ingest-report.json
+# slow machine: python ingest.py --shard 0/6 ... through 5/6, then --dense once
+export DATABASE_PATH=/tmp/compass/compass.db DENSE_SEARCH=1 REFRESH_HOURS=24
 ```
 
-The importer validates every record before writing anything, rejects duplicate IDs in the input, and transactionally upserts rows and FTS records. Existing IDs update; omitted rows remain active. This is an explicit admin CLI, not an anonymous HTTP import endpoint. A real feed would need permission, provenance, expiry/removal handling, incremental vector updates and source freshness checks. No scraping or live vacancies are claimed here.
+`manage.py` still imports a validated JSON file for tests and private catalogs. Adding a company means adding `{ats, slug, company}` to `data/boards.json`. Check each ATS's terms before extending this beyond a portfolio project.
 
 ## API
 
@@ -131,8 +144,8 @@ The importer validates every record before writing anything, rejects duplicate I
 
 ## Honest resume wording
 
-"Built a tool-calling career agent with FastAPI, Pydantic-validated outputs and SQLite conversation memory; exposed searchable evidence and actual tool traces in a responsive dark UI."
+"Built a tool-calling career agent (FastAPI, Pydantic-validated outputs, SQLite memory) over a hybrid BGE + lexical search index of 12K real job postings from 58 employers' public job-board APIs."
 
-"Combined BGE embeddings with lexical retrieval and preference-aware ranking; measured Recall@5 of 1.00 on 12 synthetic queries over a 24-role fixture catalog, with 30 passing backend/API regression tests."
+"Daily refresh pipeline with transactional sync, closed-role removal and incremental re-embedding (13 of 12,237 postings re-embedded on a second refresh); 37 tests; lexical vs hybrid retrieval compared on 20 queries; live-agent smoke suite on the real index."
 
-Do not claim real users, production-scale indexing, production accuracy or cloud deployment until independently verified. This repository was prepared for its owner to review and publish; no GitHub push was performed during the build.
+Do not claim real users, production accuracy or a permanently hosted live-model deployment until true. No users have used this.

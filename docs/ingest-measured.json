@@ -1,0 +1,24 @@
+{
+ "note": "Measured 2026-11-24 on a 1-vCPU sandbox. Run 1 = first fetch (2 of 60 configured boards returned 404 and were removed from data/boards.json). Run 2 = full refresh ~20 min later.",
+ "run1": {
+  "fetched": 12237,
+  "boards_ok": 58,
+  "boards_failed": 2
+ },
+ "run2": {
+  "added": 2,
+  "updated": 22,
+  "unchanged": 12213,
+  "closed": 2,
+  "fetched": 12237,
+  "boards_failed": 0,
+  "re_embedded": 13
+ },
+ "index": {
+  "active_postings": 12237,
+  "embedded": 12237,
+  "closed_kept_for_audit": 2,
+  "boards": 58
+ },
+ "embedding": "BAAI/bge-small-en-v1.5, 384-d, about 10-20 postings/s on 1 vCPU (title + company + location + first 450 chars)"
+}

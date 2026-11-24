@@ -1,0 +1,137 @@
+{
+ "model": "openai/gpt-oss-20b",
+ "index": "real index, 12,237 postings",
+ "caveat": "5 live scenarios on the free tier (8,000 tokens/min), run one per minute. A smoke test, not an accuracy estimate. Rate-limit errors and one fail-closed run are listed, not hidden. Passing means: tools called, schema valid, every recommended ID came from search results, and the case-specific expectation held. It does not judge whether the recommended roles are good fits.",
+ "rows": [
+  {
+   "case": "remember-and-search",
+   "ok": true,
+   "milliseconds": 2182,
+   "tools": [
+    "remember_preferences",
+    "search_jobs",
+    "get_job_details"
+   ],
+   "schema_valid": true,
+   "ids_grounded": true,
+   "recommendation_ids": [
+    "as-elevenlabs-b8a111fa-9fd5-44d0-97ed-8fd1280be4ef"
+   ],
+   "preferences": {
+    "skills": [
+     "Python",
+     "SQL",
+     "FastAPI"
+    ],
+    "target_role": "Applied AI",
+    "location": "",
+    "remote_only": true
+   },
+   "expectation_passed": true,
+   "titles": [
+    "Applied AI Engineer"
+   ]
+  },
+  {
+   "case": "follow-up",
+   "ok": true,
+   "milliseconds": 2087,
+   "tools": [
+    "search_jobs",
+    "get_job_details"
+   ],
+   "schema_valid": true,
+   "ids_grounded": true,
+   "recommendation_ids": [
+    "as-elevenlabs-b8a111fa-9fd5-44d0-97ed-8fd1280be4ef"
+   ],
+   "preferences": {
+    "skills": [
+     "Python",
+     "SQL",
+     "FastAPI"
+    ],
+    "target_role": "Applied AI",
+    "location": "",
+    "remote_only": true
+   },
+   "expectation_passed": true,
+   "titles": [
+    "Applied AI Engineer"
+   ]
+  },
+  {
+   "case": "location-filter",
+   "ok": true,
+   "milliseconds": 2419,
+   "tools": [
+    "remember_preferences",
+    "search_jobs",
+    "get_job_details"
+   ],
+   "schema_valid": true,
+   "ids_grounded": true,
+   "recommendation_ids": [
+    "gr-databricks-7845325002",
+    "gr-databricks-8926498002"
+   ],
+   "preferences": {
+    "skills": [],
+    "target_role": "",
+    "location": "India",
+    "remote_only": false
+   },
+   "expectation_passed": true,
+   "all_have_apply_url": true,
+   "note": "2 earlier attempts: one HTTP 429 quota error, one fail-closed (model could not produce a grounded valid response twice); this is the passing third attempt"
+  },
+  {
+   "case": "no-results",
+   "ok": true,
+   "milliseconds": 1757,
+   "tools": [
+    "remember_preferences",
+    "search_jobs"
+   ],
+   "schema_valid": true,
+   "ids_grounded": true,
+   "recommendation_ids": [],
+   "preferences": {
+    "skills": [
+     "Python",
+     "SQL",
+     "FastAPI"
+    ],
+    "target_role": "Applied AI",
+    "location": "Atlantis",
+    "remote_only": false
+   },
+   "expectation_passed": true
+  },
+  {
+   "case": "grounding",
+   "ok": true,
+   "milliseconds": 1698,
+   "tools": [
+    "search_jobs"
+   ],
+   "schema_valid": true,
+   "ids_grounded": true,
+   "recommendation_ids": [
+    "gr-scaleai-4728014005",
+    "gr-scaleai-4618046005",
+    "as-perplexity-7755eb0a-0f51-4286-b75e-591e44c741bc",
+    "gr-scaleai-4528009005",
+    "le-spotify-1bbaf909-5ff3-4ed6-87ca-f7ff007a169c"
+   ],
+   "preferences": {
+    "skills": [],
+    "target_role": "",
+    "location": "",
+    "remote_only": false
+   },
+   "expectation_passed": true,
+   "note": "first attempt reused state from the Atlantis case and returned nothing; rerun on fresh state"
+  }
+ ]
+}

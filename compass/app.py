@@ -13,17 +13,20 @@ from .schemas import Chat, Remember
 from .store import Store
 from .retrieval import Retriever
 from .agent import Agent, Groq, AgentError, demo
+from .refresher import start_refresher
 
 ROOT=Path(__file__).resolve().parent.parent
 
-def create_app(db_path=None, provider=None, dense=None):
+def create_app(db_path=None, provider=None, dense=None, seed=None):
     app=FastAPI(title='Job Compass API',version='1.0.0')
-    store=Store(db_path or os.getenv('DATABASE_PATH','/tmp/compass/compass.db'),str(ROOT/'data/jobs.json'))
+    store=Store(db_path or os.getenv('DATABASE_PATH','/tmp/compass/compass.db'),seed)
     retriever=Retriever(store,dense=(os.getenv('DENSE_SEARCH','0')=='1') if dense is None else dense)
     key=os.getenv('GROQ_API_KEY','')
     provider=provider or (Groq(key,os.getenv('GROQ_MODEL','openai/gpt-oss-20b')) if key else None)
     agent=Agent(store,retriever,provider) if provider else None
     app.state.store=store; app.state.retriever=retriever
+    refresh_hours=float(os.getenv('REFRESH_HOURS','0'))
+    if refresh_hours>0: start_refresher(store,refresh_hours,dense=retriever.encoder is not None)
     calls=defaultdict(deque); gate=threading.Lock(); active=set(); total=0; last_prune=0
     budget=int(os.getenv('MAX_CHAT_PER_HOUR','60'))
     global_calls=deque()
@@ -48,7 +51,7 @@ def create_app(db_path=None, provider=None, dense=None):
 
     @app.get('/api/health')
     def health():
-        return {'status':'ok','provider':'groq' if agent else 'preview','retrieval_mode':retriever.mode,'job_count':len(retriever.jobs),'catalog':'fictional demo fixtures'}
+        return {'status':'ok','provider':'groq' if agent else 'preview','retrieval_mode':retriever.mode,'job_count':len(retriever.jobs),'dense_coverage':round(retriever.dense_coverage,3),'index':store.counts(),'last_refresh':store.meta('last_refresh'),'catalog':'real postings from public employer job-board APIs (Greenhouse, Lever, Ashby)'}
 
     @app.get('/api/session')
     def session(request:Request):

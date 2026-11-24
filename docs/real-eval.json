@@ -1,0 +1,467 @@
+{
+ "caveat": "Weak title-regex labels, 20 queries; compares modes, not absolute quality.",
+ "lexical": {
+  "mode": "tfidf",
+  "index_size": 12237,
+  "dense_coverage": 0.0,
+  "queries": 20,
+  "mean_precision_at_8": 0.8688,
+  "mrr": 0.9125,
+  "p50_query_ms": 27.4,
+  "max_query_ms": 72.7,
+  "rows": [
+   {
+    "query": "build LLM agents that use tools and keep memory",
+    "precision_at_8": 0.5,
+    "reciprocal_rank": 0.25,
+    "ms": 72.7,
+    "top3": [
+     "Anthropic: Staff+ Software Engineer, Memory & Search",
+     "Cloudflare: Performance Engineer, Kernel and Memory",
+     "OpenAI: Software Engineer, Build Systems / CI"
+    ]
+   },
+   {
+    "query": "semantic search and ranking for a large catalog",
+    "precision_at_8": 0.75,
+    "reciprocal_rank": 1.0,
+    "ms": 28.2,
+    "top3": [
+     "Databricks: Staff Software Engineer  (Search Ranking)",
+     "Perplexity: Member of Technical Staff (Machine Learning Engineer, Ranking Quality - Search)",
+     "Airbnb: Staff Software Engineer, Data Catalog"
+    ]
+   },
+   {
+    "query": "recommendation systems personalization engineer",
+    "precision_at_8": 0.625,
+    "reciprocal_rank": 1.0,
+    "ms": 27.1,
+    "top3": [
+     "OpenAI: Applied Data Scientist, Personalization & Machine Learning",
+     "Spotify: Senior Applied Research Scientist - Personalization",
+     "Spotify: Senior Applied Research Scientist - Personalization"
+    ]
+   },
+   {
+    "query": "evaluate and improve LLM output quality",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 55.4,
+    "top3": [
+     "Mercor: Program Manager, Quality",
+     "Airbnb: Senior Manager, Quality",
+     "Databricks: Staff Machine Learning Engineer, CustomerLake (ML/LLM)"
+    ]
+   },
+   {
+    "query": "python backend engineer APIs and databases",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 27.6,
+    "top3": [
+     "Asana: Senior Software Engineer, APIs",
+     "Asana: Lead Product Manager, APIs and MCP",
+     "Cohere: Engineering Manager, Cohere APIs and DevEx"
+    ]
+   },
+   {
+    "query": "intern software engineering",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 60.0,
+    "top3": [
+     "Datadog: Software Engineering Intern",
+     "Datadog: Software Engineering Intern",
+     "Databricks: Software Engineering Intern (2027)"
+    ]
+   },
+   {
+    "query": "machine learning intern",
+    "precision_at_8": 0.625,
+    "reciprocal_rank": 1.0,
+    "ms": 26.3,
+    "top3": [
+     "Pinterest: Machine Learning Intern 2027 (Toronto)",
+     "Pinterest: Machine Learning Intern 2027 (Dublin)",
+     "Pinterest: Machine Learning Intern 2027 (Zurich)"
+    ]
+   },
+   {
+    "query": "data engineer pipelines warehouse",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 27.1,
+    "top3": [
+     "OpenAI: Data Engineer",
+     "Samsara: Data Engineer",
+     "Samsara: Data Engineer"
+    ]
+   },
+   {
+    "query": "site reliability and cloud infrastructure",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 59.7,
+    "top3": [
+     "Perplexity: Member of Technical Staff (Site Reliability Engineer, Cloud Infrastructure)",
+     "Gusto: Site Reliability Engineer",
+     "MongoDB: Site Reliability Engineer 3"
+    ]
+   },
+   {
+    "query": "retrieval augmented generation applied AI",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 27.0,
+    "top3": [
+     "Ramp: Applied AI Engineer",
+     "Scale AI: Applied AI Engineer",
+     "Databricks: Applied AI Architect"
+    ]
+   },
+   {
+    "query": "postgres sql database internals",
+    "precision_at_8": 0.875,
+    "reciprocal_rank": 1.0,
+    "ms": 25.6,
+    "top3": [
+     "Elastic: Senior Software Engineer - Query Engine, Database Internals - Elasticsearch",
+     "Elastic: Principal Software Engineer - Query Engine, Database Internals - Elasticsearch",
+     "Elastic: Senior Software Developer - Query Engine, Database Internals - Elasticsearch"
+    ]
+   },
+   {
+    "query": "security engineer application security",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 58.7,
+    "top3": [
+     "OpenAI: Security Engineer, Application Security",
+     "OpenAI: Security Engineer, Application Security",
+     "OpenAI: Security Engineer, Application Security"
+    ]
+   },
+   {
+    "query": "frontend react typescript engineer",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 26.4,
+    "top3": [
+     "Zscaler: Staff Software Engineer - React.js",
+     "Harvey: Staff Software Engineer, Frontend",
+     "Ramp: Software Engineer, Frontend"
+    ]
+   },
+   {
+    "query": "mobile ios android developer",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 26.1,
+    "top3": [
+     "Coinbase: Senior Software Engineer, Native Mobile (iOS/Android)",
+     "Coinbase: Senior Mobile Engineer, (iOS/Android)",
+     "Notion: Software Engineer, Mobile Platform (iOS)"
+    ]
+   },
+   {
+    "query": "product designer",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 56.2,
+    "top3": [
+     "Fivetran: Product Designer",
+     "Ramp: Product Designer",
+     "Palantir: Product Designer"
+    ]
+   },
+   {
+    "query": "enterprise sales account executive",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 27.2,
+    "top3": [
+     "Zscaler: Sales Account Executive, Enterprise",
+     "Zscaler: Sales Account Executive - Enterprise",
+     "Zscaler: Sales Account Executive - Enterprise"
+    ]
+   },
+   {
+    "query": "technical recruiter talent acquisition",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 26.8,
+    "top3": [
+     "Zscaler: Technical Recruiter",
+     "Snowflake: Technical Recruiter",
+     "Anthropic: Technical Recruiter"
+    ]
+   },
+   {
+    "query": "data scientist experimentation analytics",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 55.9,
+    "top3": [
+     "Robinhood: Senior Data Scientist, Experimentation",
+     "Cloudflare: Data Scientist",
+     "Stripe: Data Scientist"
+    ]
+   },
+   {
+    "query": "forward deployed engineer customer solutions",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 27.4,
+    "top3": [
+     "Databricks: Forward Deployed Engineer",
+     "Figma: Forward Deployed Engineer",
+     "Intercom: Forward Deployed Engineer"
+    ]
+   },
+   {
+    "query": "kubernetes docker deployment engineer",
+    "precision_at_8": 0.0,
+    "reciprocal_rank": 0,
+    "ms": 26.9,
+    "top3": [
+     "Decagon: Agent Deployment Engineer",
+     "Supabase: Postgres Deployment Engineer",
+     "Cloudflare: Network Deployment Engineer"
+    ]
+   }
+  ]
+ },
+ "hybrid": {
+  "mode": "hybrid-bge",
+  "index_size": 12237,
+  "dense_coverage": 1.0,
+  "queries": 20,
+  "mean_precision_at_8": 0.9,
+  "mrr": 0.8958,
+  "p50_query_ms": 141.1,
+  "max_query_ms": 203.1,
+  "rows": [
+   {
+    "query": "build LLM agents that use tools and keep memory",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 203.1,
+    "top3": [
+     "OpenAI: Software Engineer, API Agents",
+     "Snowflake: Intermediate/ Senior Software Engineer - Cortex LLM Training Platform",
+     "OpenAI: AI Systems Engineer, Codex Agents"
+    ]
+   },
+   {
+    "query": "semantic search and ranking for a large catalog",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 182.7,
+    "top3": [
+     "Databricks: Staff Software Engineer  (Search Ranking)",
+     "Perplexity: Member of Technical Staff (Machine Learning Engineer, Ranking Quality - Search)",
+     "Elastic: Solutions Architect - Search Specialist"
+    ]
+   },
+   {
+    "query": "recommendation systems personalization engineer",
+    "precision_at_8": 0.875,
+    "reciprocal_rank": 1.0,
+    "ms": 141.1,
+    "top3": [
+     "Spotify: Senior Applied Research Scientist - Personalization",
+     "Spotify: Senior Applied Research Scientist - Personalization",
+     "OpenAI: Applied Data Scientist, Personalization & Machine Learning"
+    ]
+   },
+   {
+    "query": "evaluate and improve LLM output quality",
+    "precision_at_8": 0.875,
+    "reciprocal_rank": 1.0,
+    "ms": 137.7,
+    "top3": [
+     "Databricks: Staff Machine Learning Engineer, CustomerLake (ML/LLM)",
+     "Datadog: Senior AI Research Engineer - LLM Training & Inference Infrastructure",
+     "Databricks: Staff Software Engineer- Search Quality"
+    ]
+   },
+   {
+    "query": "python backend engineer APIs and databases",
+    "precision_at_8": 0.875,
+    "reciprocal_rank": 0.5,
+    "ms": 172.3,
+    "top3": [
+     "Supabase: SDK Engineer - Python",
+     "GitLab: Backend Engineer (Python),AI Engineering: Agent Foundations",
+     "Spotify: Senior Backend Engineer - Subscriptions"
+    ]
+   },
+   {
+    "query": "intern software engineering",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 137.7,
+    "top3": [
+     "Datadog: Software Engineering Intern",
+     "Datadog: Software Engineering Intern",
+     "MongoDB: 2027 - Software Engineering Intern, AMER"
+    ]
+   },
+   {
+    "query": "machine learning intern",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 157.8,
+    "top3": [
+     "Pinterest: Machine Learning Intern 2027 (Toronto)",
+     "Pinterest: Machine Learning Intern 2027 (Dublin)",
+     "Pinterest: Machine Learning Intern 2027 (Zurich)"
+    ]
+   },
+   {
+    "query": "data engineer pipelines warehouse",
+    "precision_at_8": 0.75,
+    "reciprocal_rank": 1.0,
+    "ms": 123.8,
+    "top3": [
+     "OpenAI: Data Engineer",
+     "Lyft: Data Engineer",
+     "Samsara: Data Engineer"
+    ]
+   },
+   {
+    "query": "site reliability and cloud infrastructure",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 123.6,
+    "top3": [
+     "MongoDB: Site Reliability Engineer 3",
+     "Perplexity: Member of Technical Staff (Site Reliability Engineer, Cloud Infrastructure)",
+     "MongoDB: Senior Site Reliability Engineer, Infrastructure Security"
+    ]
+   },
+   {
+    "query": "retrieval augmented generation applied AI",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 158.1,
+    "top3": [
+     "Databricks: Applied AI Engineer",
+     "Databricks: Applied AI Architect",
+     "Scale AI: Applied AI Engineer"
+    ]
+   },
+   {
+    "query": "postgres sql database internals",
+    "precision_at_8": 0.5,
+    "reciprocal_rank": 0.25,
+    "ms": 121.9,
+    "top3": [
+     "Supabase: Product Manager - Postgres",
+     "ClickHouse: Principal Software Engineer - Postgres",
+     "ClickHouse: Senior Engineering Manager, Postgres"
+    ]
+   },
+   {
+    "query": "security engineer application security",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 128.5,
+    "top3": [
+     "OpenAI: Security Engineer, Application Security",
+     "OpenAI: Security Engineer, Application Security",
+     "OpenAI: Security Engineer, Application Security"
+    ]
+   },
+   {
+    "query": "frontend react typescript engineer",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 167.7,
+    "top3": [
+     "ClickHouse: Sr. Frontend Software Engineer - Growth",
+     "ClickHouse: Senior Software Engineer (Typescript / Front-end) - AI/ML",
+     "ClickHouse: Senior Software Engineer (Typescript / Front-end) - AI/ML"
+    ]
+   },
+   {
+    "query": "mobile ios android developer",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 123.8,
+    "top3": [
+     "Coinbase: Senior Software Engineer, Native Mobile (iOS/Android)",
+     "Lyft: Senior Software Engineer - iOS",
+     "Coinbase: Senior Mobile Engineer, (iOS/Android)"
+    ]
+   },
+   {
+    "query": "product designer",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 133.2,
+    "top3": [
+     "Palantir: Product Designer",
+     "Scale AI: Staff Product Designer",
+     "Chime: Principal Product Designer"
+    ]
+   },
+   {
+    "query": "enterprise sales account executive",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 184.4,
+    "top3": [
+     "Scale AI: Enterprise Account Executive",
+     "Datadog: Enterprise Sales Executive",
+     "Datadog: Enterprise Sales Executive"
+    ]
+   },
+   {
+    "query": "technical recruiter talent acquisition",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 143.8,
+    "top3": [
+     "Perplexity: Technical Recruiter, AI",
+     "Snowflake: Technical Recruiter",
+     "Toast: Senior Technical Talent Acquisition Partner - Contract"
+    ]
+   },
+   {
+    "query": "data scientist experimentation analytics",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 129.1,
+    "top3": [
+     "OpenAI: Data Scientist, Core Experimentation",
+     "Spotify: Data Scientist  - Business Analytics",
+     "OpenAI: Data Scientist, Analytics Enablement"
+    ]
+   },
+   {
+    "query": "forward deployed engineer customer solutions",
+    "precision_at_8": 1.0,
+    "reciprocal_rank": 1.0,
+    "ms": 166.5,
+    "top3": [
+     "Databricks: Forward Deployed Engineer",
+     "Databricks: Forward Deployed Engineer",
+     "Databricks: Sr. Forward Deployed Engineer"
+    ]
+   },
+   {
+    "query": "kubernetes docker deployment engineer",
+    "precision_at_8": 0.125,
+    "reciprocal_rank": 0.16666666666666666,
+    "ms": 140.2,
+    "top3": [
+     "Supabase: Postgres Deployment Engineer",
+     "Supabase: OrioleDB Deployment Engineer",
+     "Supabase: Multigres Deployment Engineer"
+    ]
+   }
+  ]
+ }
+}

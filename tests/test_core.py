@@ -82,7 +82,7 @@ def test_followup_receives_memory(stack):
 @pytest.fixture
 def client(tmp_path,monkeypatch):
     monkeypatch.delenv('GROQ_API_KEY',raising=False)
-    return TestClient(create_app(str(tmp_path/'api.db'),dense=False))
+    return TestClient(create_app(str(tmp_path/'api.db'),dense=False,seed='data/jobs.json'))
 
 def test_health_and_preview(client):
     h=client.get('/api/health');assert h.json()['provider']=='preview';assert h.json()['job_count']==24
@@ -111,7 +111,7 @@ def test_static_js_uses_text_nodes(client):
     js=client.get('/static/app.js').text;assert '.innerHTML' not in js;assert 'textContent' in js
 
 def test_api_sessions_isolated(tmp_path):
-    app=create_app(str(tmp_path/'shared.db'),dense=False);a=TestClient(app);b=TestClient(app);a.patch('/api/preferences',json={'skills':['SQL']});assert b.get('/api/session').json()['preferences']['skills']==[]
+    app=create_app(str(tmp_path/'shared.db'),dense=False,seed='data/jobs.json');a=TestClient(app);b=TestClient(app);a.patch('/api/preferences',json={'skills':['SQL']});assert b.get('/api/session').json()['preferences']['skills']==[]
 
 def test_running_retriever_refreshes(stack):
     s,r=stack;j=s.jobs()[0];j['title']='Uniquequartz Internship';j['description']='Uniquequartz uniquequartz';s.upsert([j]);out=r.search(Search(query='uniquequartz'),s.preferences('a'));assert out[0]['id']=='j01';assert out[0]['title']=='Uniquequartz Internship'
